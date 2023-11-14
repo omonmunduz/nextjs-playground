@@ -1,0 +1,26 @@
+import Link from "next/link";
+
+const Navigation = () => {
+
+    const navData = [
+        {slug: "/", name: "Home", id:1},
+        {slug: "posts", name: "Posts", id: 2},
+        {slug: "about", name: "About", id: 3},
+    ];
+
+    return (
+        <header className="bg-sky-300">
+            <nav className="max-w-screen-md mx-auto p-10">
+                <ul className="flex">
+                    {navData.map(item => {
+                        return <li className="w-4/12 text-center font-semibold tracking-wide">
+                            <Link href={`${item.slug}`}>{item.name}</Link>
+                        </li>
+                    })}
+                </ul>
+            </nav>
+        </header>
+    )
+};
+
+export default Navigation;
