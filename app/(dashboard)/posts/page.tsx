@@ -2,6 +2,9 @@
 import { prisma } from '@/utils/db';
 import TodoList from '@/components/TodoList';
 import NewToDoForm from '@/components/NewToDoForm';
+import Editor from '@/components/Editor';
+import classNames from 'classnames';
+import styles from "./posts.module.scss";
 
 
 const getData = async () => {
@@ -12,13 +15,22 @@ const getData = async () => {
 
 const PostsPage = async () => {
     const todos = await getData();
-    console.log(todos, 'todos')
+
+    const titleClass = classNames('font-momo', {
+      [styles.title]: true,
+    })
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Posts</h1>
-      <NewToDoForm/>
-      <TodoList todos={todos}/>
+    <section className={styles.postsPage}>
+      <div className={styles.postsPageIntro}>
+        <h1 className={titleClass}>Posts</h1>
+      </div>
+      <div className={styles.formInput}>
+        <Editor/>
+      </div>
+      <div className={styles.todoListCtn}>
+        <TodoList todos={todos}/>
+      </div>
     </section>
   )
 }

@@ -1,0 +1,17 @@
+.postsPage {
+    max-width: 1224px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+
+    .postsPageIntro {
+        padding: 13px 5px;
+
+        .title {
+            font-size: 48px;
+
+            @media screen and (max-width: 768px) {
+            }
+        }
+    }
+}

@@ -1,4 +1,3 @@
-import React from 'react'
 import { newTodo } from '@/utils/actions'
 
 const NewToDoForm = () => {

@@ -1,10 +1,17 @@
-import Navigation from "@/components/Navigation"
+import Features from "@/components/Features"
+import Hero from "@/components/Hero"
+import Partners from "@/components/Partners"
+import Workflow from "@/components/Workflow"
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Main Page</h1>
-    </main>
+         <main>
+            <Hero/>
+            <Features/>
+            <Partners/>
+            <Workflow/>
+         </main>
   )
 }
  
