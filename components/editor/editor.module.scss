@@ -1,0 +1,23 @@
+.editor {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+   
+        input {
+            padding: 13px;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .submit {
+            width: 100%;
+            font-weight: 600;
+            color: white;
+            height: 50px;
+        }
+}

@@ -16,16 +16,28 @@ const createURL = (window, path) => {
     return window + path
 }
 
-export const addNewPost = async (location, content) => {
+export const addNewPost = async (location:String, {title, subtitle, content}) => {
     const res = await fetch(new Request(createURL(location,"/api/posts"), {
         method: 'POST',
-        body: JSON.stringify({content}),
+        body: JSON.stringify({title, subtitle, content}),
     }))
+    revalidatePath('/posts')
+    if(res.ok) {
+        const data = await res.json()
+        return data.data
+    }
+}
+
+export const getLocation = async (location) => {
+  const res = await fetch(createURL(location, "/api/geolocation"))
+  revalidatePath('/explore')
+  if(!res.ok) {
+    console.log(res, 'nope')
+  }
 
     if(res.ok) {
         const data = await res.json()
-        console.log(data, 'heeeey')
-        revalidatePath("/posts")
-        return data.data
-    }
+        console.log(data, 'datatatatattaa')
+        return data
+        }
 }

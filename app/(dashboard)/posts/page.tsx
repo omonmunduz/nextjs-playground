@@ -1,8 +1,8 @@
 
-import { prisma } from '@/utils/db';
+import { prisma } from '@/app/_utils/db';
 import TodoList from '@/components/TodoList';
 import NewToDoForm from '@/components/NewToDoForm';
-import Editor from '@/components/Editor';
+import Editor from '@/components/editor/Editor';
 import classNames from 'classnames';
 import styles from "./posts.module.scss";
 

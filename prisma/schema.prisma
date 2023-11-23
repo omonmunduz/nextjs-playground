@@ -14,5 +14,7 @@ model Todo {
   id String @id @default(uuid())
   createdAt DateTime @default(now())
   completed Boolean @default(false)
+  title String
+  subtitle String
   content String?
 }

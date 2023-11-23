@@ -114,8 +114,8 @@ const Navigation = () => {
               <a href="/posts" className="text-sm font-semibold leading-6 text-gray-900">
                 Posts
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                Marketplace
+              <a href="/exlpore" className="text-sm font-semibold leading-6 text-gray-900">
+                Explore
               </a>
               <a href="/about" className="text-sm font-semibold leading-6 text-gray-900">
                 About

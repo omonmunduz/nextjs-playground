@@ -1,4 +1,4 @@
-import { newTodo } from '@/utils/actions'
+import { newTodo } from '@/app/_utils/actions'
 
 const NewToDoForm = () => {
   return (
