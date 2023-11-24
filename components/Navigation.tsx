@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Fragment, useState } from 'react'
+import { UserButton } from "@clerk/nextjs";
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -44,10 +45,10 @@ const Navigation = () => {
         <header className="bg-white">
           <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
-              <a href="/" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-              </a>
+              </Link>
             </div>
             <div className="flex lg:hidden">
               <button
@@ -97,34 +98,34 @@ const Navigation = () => {
                     </div>
                     <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                       {callsToAction.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                         >
                           <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </Popover.Panel>
                 </Transition>
               </Popover>
     
-              <a href="/posts" className="text-sm font-semibold leading-6 text-gray-900">
+              <Link href="/posts" className="text-sm font-semibold leading-6 text-gray-900">
                 Posts
-              </a>
-              <a href="/exlpore" className="text-sm font-semibold leading-6 text-gray-900">
+              </Link>
+              <Link href="/explore" className="text-sm font-semibold leading-6 text-gray-900">
                 Explore
-              </a>
-              <a href="/about" className="text-sm font-semibold leading-6 text-gray-900">
+              </Link>
+              <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
                 About
-              </a>
+              </Link>
             </Popover.Group>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <Link href="/sign-in" className="text-sm font-semibold leading-6 text-gray-900">
                 Log in <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </div>
           </nav>
           <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -207,6 +208,9 @@ const Navigation = () => {
               </div>
             </Dialog.Panel>
           </Dialog>
+          <div className="w-full h-full px-6 flex items-center justify-end">
+                <UserButton />
+            </div>
         </header>
       )
     }
